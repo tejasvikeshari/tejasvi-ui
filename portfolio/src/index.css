@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base-950 text-slate-200 font-sans antialiased overflow-x-hidden;
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05060a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7c5cff, #3cf0ff);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9b83ff, #6ff5ff);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+  color: #fff;
+}
+
+/* ---------- Reusable glass / gradient utilities ---------- */
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10;
+  }
+  .glass-card {
+    @apply glass rounded-2xl shadow-card relative overflow-hidden;
+  }
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 bg-card-sheen pointer-events-none;
+  }
+  .section-padding {
+    @apply px-6 sm:px-10 lg:px-24 py-24 md:py-32;
+  }
+  .heading-gradient {
+    @apply bg-gradient-to-r from-accent via-accent-pink to-accent-cyan bg-clip-text text-transparent;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm text-white
+      bg-gradient-to-r from-accent to-accent-pink shadow-glow
+      transition-transform duration-300 hover:scale-105 active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm
+      border border-white/20 text-slate-100 backdrop-blur-md
+      transition-all duration-300 hover:border-accent hover:shadow-glow hover:scale-105 active:scale-95;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-white;
+  }
+  .section-tag {
+    @apply text-xs sm:text-sm uppercase tracking-[0.3em] text-accent-cyan font-mono mb-3;
+  }
+  .animated-gradient-bg {
+    background: linear-gradient(-45deg, #05060a, #0f1220, #141230, #0a0c14);
+    background-size: 400% 400%;
+    animation: gradient 18s ease infinite;
+  }
+}
+
+/* ---------- Lazy image fade ---------- */
+img {
+  @apply transition-opacity duration-700;
+}
+img[data-loaded='false'] {
+  opacity: 0;
+}
+img[data-loaded='true'] {
+  opacity: 1;
+}
