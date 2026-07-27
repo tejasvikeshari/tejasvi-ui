@@ -1,13 +1,10 @@
-/**
- * ============================================================
- *  SINGLE SOURCE OF TRUTH FOR ALL PORTFOLIO CONTENT
- * ============================================================
- *  Edit this file to update the entire site — every component
- *  reads from here. No need to touch component code to change
- *  text, links, projects, skills, achievements, etc.
- * ============================================================
- */
 
+import profileImg from "../assets/images/profile/profile.jpg";
+
+import aiChatbotImg from "../assets/images/projects/ai-chatbot.jpg";
+import signBridgeImg from "../assets/images/projects/signbridge-ai.jpg";
+import utilityDashboardImg from "../assets/images/projects/utility-dashboard.jpg";
+import carRentalImg from "../assets/images/projects/car-rental.jpg";
 export const personal = {
   name: 'Tejasvi Kesharwani',
   titles: [
@@ -27,7 +24,7 @@ export const personal = {
   email: 'tejasvikeshari0708@gmail.com',
   phone: '+91 8299279120',
   resumeFile: '/resume.pdf', // place your resume PDF in the /public folder with this name
-  avatar: '/src/assets/images/profile/profile.jpg',
+  avatar: profileImg,
 }
 
 export const socials = [
@@ -101,7 +98,7 @@ export const skillCategories = [
 export const projects = [
   {
     title: 'AI Chatbot for Student Support Services',
-    image: '/src/assets/images/projects/ai-chatbot.jpg',
+    image: aiChatbotImg,
     description:
       'An AI-powered PDF chatbot that lets users upload documents and get accurate, context-aware answers using semantic search and a React + FastAPI architecture.',
     features: [
@@ -116,7 +113,7 @@ export const projects = [
   },
   {
     title: 'SignBridge AI — Uhack 4.0',
-    image: '/src/assets/images/projects/signbridge-ai.jpg',
+    image: signBridgeImg,
     description:
       'An accessibility-first platform built at Uhack 4.0 with three modules supporting deaf-mute, visually impaired, and dyslexic users — placed among the Top 66 out of 260+ teams.',
     features: [
@@ -130,7 +127,7 @@ export const projects = [
   },
   {
     title: 'React Utility Dashboard & Portfolio',
-    image: '/src/assets/images/projects/utility-dashboard.jpg',
+    image: utilityDashboardImg,
     description:
       'A responsive, dark-themed utility dashboard integrating 10+ modules including authentication, real-time weather, Google Maps, and arithmetic tools.',
     features: [
@@ -145,7 +142,7 @@ export const projects = [
   },
   {
     title: 'Car Rental Management System',
-    image: '/src/assets/images/projects/car-rental.jpg',
+    image: carRentalImg,
     description:
       'A Java-based Car Rental Management System built on core OOP principles to automate bookings, returns, and billing while streamlining fleet and customer data.',
     features: [
@@ -160,11 +157,7 @@ export const projects = [
   },
 ]
 
-/**
- * Add achievement images to src/assets/images/achievements/
- * and reference them below. Placeholder entries are pre-filled
- * from the resume — swap the `image` path once you upload photos.
- */
+
 export const achievements = [
   {
     title: 'Girls in Tech Empowerment Award — UHack 4.0',
